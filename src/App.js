@@ -5,9 +5,9 @@ import Resultado from './componentes/Resultado';
 class App extends Component {
  
    state ={
-    termino : '',
+    termino : " ",
     imagenes : [], //para reutilizar un componente
-    pagina: ''
+    pagina: " "
    }
 
    scroll = () => {
@@ -55,8 +55,9 @@ class App extends Component {
    consultarApi = () => {
     const termino = this.state.termino;
     const pagina = this.state.pagina;
-    const url = `https://pixabay.com/api/?key={ CLAVE }&q=${termino}&per_page=30&page=${pagina}`;
-     
+    const url = `https://pixabay.com/api/?key=1732750-d45b5378879d1e877cd1e877cd1d35a6&q=${termino}&per_page=30&page=${pagina}`;
+     console.log(process.env.CLAVE)
+
     fetch(url)
      .then(respuesta => respuesta.json)
      .then(resultado => this.setState({ imagenes : resultado.hits}) )
@@ -80,6 +81,7 @@ class App extends Component {
            datosBusqueda={this.datosBusqueda} />
 
         </div>
+        {this.state.termino}
        <div className='row justify-content-center'>
         <Resultado 
            imagenes={this.state.imagenes} 

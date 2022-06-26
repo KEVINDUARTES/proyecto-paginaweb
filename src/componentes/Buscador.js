@@ -21,7 +21,7 @@ class Buscador extends Component {
                     Ejemplo: cafe'></input>
                 </div>
 
-                <div className='form-group col-md-8'>
+                <div className='form-group col-md-4'>
                     <input type= "submit" className='btn btn-lg btn-danger btn-block'
                       value='Buscar...'></input>
                 </div>
