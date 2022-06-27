@@ -55,11 +55,11 @@ class App extends Component {
    consultarApi = () => {
     const termino = this.state.termino;
     const pagina = this.state.pagina;
-    const url = `https://pixabay.com/api/?key=1732750-d45b5378879d1e877cd1e877cd1d35a6&q=${termino}&per_page=30&page=${pagina}`;
+    const url = `https://pixabay.com/api/?key=28291066-7d2b61c16d28df33650c4f9c2&q=${termino}&per_page=30&page=${pagina}`;;
      console.log(process.env.CLAVE)
 
     fetch(url)
-     .then(respuesta => respuesta.json)
+     .then(respuesta => respuesta.json())
      .then(resultado => this.setState({ imagenes : resultado.hits}) )
    }
 
@@ -75,7 +75,7 @@ class App extends Component {
   render () {
     return (
       <div className="app container">
-        <div className='junbotron'> 
+        <div className='jumbotron'> 
           <p className="lead text-center">Buscador de Imagenes</p>
           <Buscador //como props de buscador le paso a app mensaje
            datosBusqueda={this.datosBusqueda} />
